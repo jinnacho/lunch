@@ -6,9 +6,6 @@ st.title("🥗 도시락 선택 데이터 분석 앱")
 # 데이터 불러오기
 try:
     data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
-    st.write("📋 첫 5행 확인:", data.head())
-    st.write("📌 열 이름:", data.columns.tolist())
-
     data.columns = data.columns.str.strip()  # 열 이름 앞뒤 공백 제거
 except FileNotFoundError:
     st.error("⚠️ lunchdata.csv 파일을 찾을 수 없습니다.")
