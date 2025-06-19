@@ -1,7 +1,8 @@
-st.title("🎉 간단 데이터 분석 & 시각화 앱")
 
 import streamlit as st
 import matplotlib.pyplot as plt
+
+st.title("🎉 간단 데이터 분석 & 시각화 앱")
 
 # 한글 폰트 수동 지정
 plt.rcParams['font.family'] = 'Malgun Gothic'  # Windows
