@@ -1,8 +1,12 @@
-import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import koreanize_matplotlib
 st.title("🎉 간단 데이터 분석 & 시각화 앱")
+
+import streamlit as st
+import matplotlib.pyplot as plt
+
+# 한글 폰트 수동 지정
+plt.rcParams['font.family'] = 'Malgun Gothic'  # Windows
+plt.rcParams['axes.unicode_minus'] = False
+
 
 # 샘플 데이터 만들기
 data = {
