@@ -4,15 +4,32 @@ import pandas as pd
 st.title("🥗 도시락 선택 데이터 분석 앱")
 
 # 데이터 불러오기
-data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
-st.write("🔥 원본 미리보기")
-st.write(data.head())
-st.write("🧾 열 이름:", data.columns.tolist())
+import streamlit as st
+import pandas as pd
 
+st.title("🥗 도시락 선택 데이터 분석 앱")
 
+try:
+    # 첫 줄부터 실제 데이터처럼 들어있으므로 header=None으로 불러오기
+    data = pd.read_csv("lunchdata.csv", encoding='cp949', header=None)
+    st.write("📌 원본 데이터:", data.head())
 
+    # 문자열을 쉼표 기준으로 나누기
+    data = data[0].str.split(",", expand=True)
 
+    # 열 이름 지정
+    data.columns = ["날짜", "요일", "학년", "메뉴", "수량"]
 
+    st.write("✅ 변환된 데이터:", data.head())
+
+    # 형 변환
+    data["수량"] = data["수량"].astype(int)
+    data["학년"] = data["학년"].astype(int)
+    data["날짜"] = pd.to_datetime(data["날짜"])
+
+except Exception as e:
+    st.error(f"❌ 오류 발생: {e}")
+    st.stop()
 
 try:
     data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
