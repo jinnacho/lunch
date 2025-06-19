@@ -11,7 +11,7 @@ st.title("🥗 도시락 선택 데이터 분석 앱")
 
 try:
     # 첫 줄부터 실제 데이터처럼 들어있으므로 header=None으로 불러오기
-    data = pd.read_csv("lunchdata.csv", encoding='cp949', header=None)
+    data = pd.read_csv("lunchdata.csv", encoding='cp949')
     st.write("📌 원본 데이터:", data.head())
 
     # 문자열을 쉼표 기준으로 나누기
