@@ -5,7 +5,7 @@ import pandas as pd
 st.title("🥗 도시락 선택 데이터 분석 앱")
 
 # CSV 파일 불러오기
-data = pd.read_csv("lunchdata.csv")
+data = pd.read_csv("lunchdata.csv", encoding='utf-8')
 
 # 날짜 형식 변환 (선택)
 data["날짜"] = pd.to_datetime(data["날짜"])
