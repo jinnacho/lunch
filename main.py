@@ -1,8 +1,3 @@
-import streamlit as st
-import pandas as pd
-
-st.title("🥗 도시락 선택 데이터 분석 앱")
-
 # 데이터 불러오기
 import streamlit as st
 import pandas as pd
