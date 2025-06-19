@@ -4,15 +4,19 @@ import pandas as pd
 st.title("🥗 도시락 선택 데이터 분석 앱")
 
 # 데이터 불러오기
+import streamlit as st
+import pandas as pd
+
+st.title("🥗 도시락 선택 데이터 분석 앱")
+
 try:
     data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
-    data.columns = data.columns.str.strip()  # 열 이름 앞뒤 공백 제거
-except FileNotFoundError:
-    st.error("⚠️ lunchdata.csv 파일을 찾을 수 없습니다.")
-    st.stop()
-except UnicodeDecodeError:
-    st.error("⚠️ 인코딩 오류: 'utf-8' 대신 'cp949' 또는 'euc-kr'로 저장된 파일인지 확인하세요.")
-    st.stop()
+    data.columns = data.columns.str.strip().str.replace('\ufeff', '')  # 열 이름 정리
+    st.write("📋 데이터 미리보기", data.head())
+    st.write("🧾 열 이름:", data.columns.tolist())
+except Exception as e:
+    st.error(f"❌ 오류 발생: {e}")
+
 
 # 날짜 형식 변환
 if "날짜" in data.columns:
