@@ -58,4 +58,6 @@ if data is not None:
         st.warning("⚠️ '학년' 또는 '수량' 열이 누락되었습니다.")
 
     # 전체 수량
-    if "수량" in data.co
+    if "수량" in data.columns:
+        total = data["수량"].sum()
+        st.markdown(f"👉 **전체 도시락 선택 수량: {total}개**")
