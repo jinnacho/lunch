@@ -27,10 +27,7 @@ try:
     data["학년"] = data["학년"].astype(int)
     data["날짜"] = pd.to_datetime(data["날짜"])
 
-except Exception as e:
-    st.error(f"❌ 오류 발생: {e}")
-    st.stop()
-
+❌ 오류 발생: 0
 try:
     data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
     data.columns = data.columns.str.strip().str.replace('\ufeff', '')  # 열 이름 정리
