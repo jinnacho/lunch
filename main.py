@@ -4,9 +4,14 @@ import pandas as pd
 st.title("🥗 도시락 선택 데이터 분석 앱")
 
 # 데이터 불러오기
-data = None  # 기본값 설정
-raw = pd.read_csv("lunchdata.csv", encoding='cp949', header=None)
-st.write(raw.head())
+data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
+st.write("🔥 원본 미리보기")
+st.write(data.head())
+st.write("🧾 열 이름:", data.columns.tolist())
+
+
+
+
 
 
 try:
