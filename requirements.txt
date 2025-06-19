@@ -2,4 +2,4 @@ streamlit
 pandas
 matplotlib
 koreanize_matplotlib
-matplotlib.pyplot as plt
+
