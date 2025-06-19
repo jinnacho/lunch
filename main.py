@@ -1,16 +1,6 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
-import matplotlib.pyplot as plt
-import matplotlib.font_manager as fm
-
-# 한글 폰트 경로 지정 (예: Windows 기본 폰트)
-font_path = "C:/Windows/Fonts/malgun.ttf"
-fontprop = fm.FontProperties(fname=font_path).get_name()
-plt.rc('font', family=fontprop)
-
-
-
 
 st.title("🎉 간단 데이터 분석 & 시각화 앱")
 
