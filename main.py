@@ -5,6 +5,9 @@ st.title("🥗 도시락 선택 데이터 분석 앱")
 
 # 데이터 불러오기
 data = None  # 기본값 설정
+raw = pd.read_csv("lunchdata.csv", encoding='cp949', header=None)
+st.write(raw.head())
+
 
 try:
     data = pd.read_csv("lunchdata.csv", encoding='cp949', sep=",")
