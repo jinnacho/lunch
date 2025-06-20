@@ -30,7 +30,7 @@ st.write(f"### {subject} 점수 분포")
 
 fig, ax = plt.subplots()
 ax.hist(df[subject], bins=5, color='skyblue', edgecolor='black')
-ax.set_xlabel("점수")
+ax.set_xlabel("score")
 ax.set_ylabel("학생 수")
 ax.set_title(f"{subject} 점수 분포 히스토그램")
 
