@@ -6,8 +6,6 @@ import matplotlib.pyplot as plt
 st.title("🎉 간단 데이터 분석 & 시각화 앱")
 
 # 한글 폰트 수동 지정
-plt.rcParams['font.family'] = 'Malgun Gothic'  # Windows
-plt.rcParams['axes.unicode_minus'] = False
 
 
 # 샘플 데이터 만들기
@@ -31,7 +29,7 @@ st.write(f"### {subject} 점수 분포")
 fig, ax = plt.subplots()
 ax.hist(df[subject], bins=5, color='skyblue', edgecolor='black')
 ax.set_xlabel("score")
-ax.set_ylabel("학생 수")
+ax.set_ylabel("STUDENT")
 ax.set_title(f"{subject} HISTOGRAM")
 
 st.pyplot(fig)
